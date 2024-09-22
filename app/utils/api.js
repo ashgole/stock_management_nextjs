@@ -21,7 +21,7 @@ export const addProduct = async (productData) => {
 };
 
 export const fetchProducts = async () => {
-  const response = await fetch(`${rootPath}/api/product`);
+  const response = await fetch(`${rootPath}/api/product`,{cache:'no-store'});
   if (!response.ok) {
     throw new Error('Failed to fetch products');
   }
