@@ -1,7 +1,7 @@
 let rootPath = '';
 if (process.env.NODE_ENV === 'development') {
-  rootPath = process.env.NEXT_PUBLIC_LOCAL_URL
+  rootPath = 'http://localhost:3000'
 } else {
-  rootPath = process.env.NEXT_PUBLIC_GLOBAL_URL
+  rootPath = 'https://ashabb-stock-management-nextjs.vercel.app'
 }
 export { rootPath };
