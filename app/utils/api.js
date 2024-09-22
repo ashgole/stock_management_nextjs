@@ -1,6 +1,10 @@
 // utils/api.js
+
+import { rootPath } from "./constants";
+
+
 export const addProduct = async (productData) => {
-  const response = await fetch('/api/product', {
+  const response = await fetch(`${rootPath}/api/product`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -17,8 +21,7 @@ export const addProduct = async (productData) => {
 };
 
 export const fetchProducts = async () => {
-  const response = await fetch('/api/product');
-  console.log('ok response',response )
+  const response = await fetch(`${rootPath}/api/product`);
   if (!response.ok) {
     throw new Error('Failed to fetch products');
   }

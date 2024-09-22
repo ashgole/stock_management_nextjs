@@ -20,7 +20,7 @@ const Header = () => {
           </svg>
         </button>
         <nav className="hidden md:flex space-x-4">
-          <Link href="/pages/dashboard" className="text-white hover:text-gray-300">Dashboard</Link>
+          <Link href="/pages/producttable" className="text-white hover:text-gray-300">Product Table</Link>
           <Link href="/inventory" className="text-white hover:text-gray-300">Inventory</Link>
           <Link href="/pages/settings" className="text-white hover:text-gray-300">Settings</Link>
         </nav>

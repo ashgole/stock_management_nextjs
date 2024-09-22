@@ -1,29 +1,13 @@
-// components/ProductTable.js
-import { fetchProducts } from '@/app/utils/api';
-import { useEffect, useState } from 'react';
 
-const ProductTable = () => {
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState(null);
+// components/Page.js
 
-  // Function to fetch and set product data
-  const getProducts = async () => {
-    try {
-      const data = await fetchProducts();
-      console.log('ok data',data )
-      setProducts(data);
-    } catch (err) {
-      setError(err.message);
-    }
-  };
+import { fetchProducts } from "@/app/utils/api";
 
-  useEffect(() => {
-    getProducts(); // Fetch products on component mount
-  }, []);
-
+const Page = async () => {
+  const products = await fetchProducts();
   return (
     <div className="overflow-x-auto">
-      {error && <div className="text-red-500">{error}</div>}
+      {/* {error && <div className="text-red-500">{error}</div>} */}
       <table className="min-w-full table-auto border-collapse border border-gray-300">
         <thead className="bg-gray-100">
           <tr>
@@ -60,4 +44,4 @@ const ProductRow = ({ product }) => {
   );
 };
 
-export default ProductTable;
+export default Page;
