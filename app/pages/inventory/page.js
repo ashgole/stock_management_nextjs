@@ -6,7 +6,7 @@ import { fetchProducts } from "@/app/utils/api";
 const Page = async () => {
   const products = await fetchProducts();
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto mt-4">
       {/* {error && <div className="text-red-500">{error}</div>} */}
       <table className="min-w-full table-auto border-collapse border border-gray-300">
         <thead className="bg-gray-100">

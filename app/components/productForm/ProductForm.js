@@ -1,4 +1,5 @@
 // components/ProductForm.js
+'use client'
 import { addProduct } from '@/app/utils/api';
 import { useState } from 'react';
 
