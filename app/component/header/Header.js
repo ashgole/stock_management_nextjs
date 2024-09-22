@@ -21,14 +21,14 @@ const Header = () => {
         </button>
         <nav className="hidden md:flex space-x-4">
           <Link href="/pages/dashboard" className="text-white hover:text-gray-300">Dashboard</Link>
-          <Link href="/inventory" className="text-white hover:text-gray-300">Inventory</Link>
+          <Link href="/pages/inventory" className="text-white hover:text-gray-300">Inventory</Link>
           <Link href="/pages/settings" className="text-white hover:text-gray-300">Settings</Link>
         </nav>
       </div>
       {isOpen && (
         <nav className="mt-4 space-y-2 md:hidden">
           <Link href="/dashboard" className="block text-white">Dashboard</Link>
-          <Link href="/inventory" className="block text-white">Inventory</Link>
+          <Link href="/pages/inventory" className="block text-white">Inventory</Link>
           <Link href="/settings" className="block text-white">Settings</Link>
         </nav>
       )}
