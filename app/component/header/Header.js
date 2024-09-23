@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-blue-600 p-4">
+    <header className="bg-blue-600 p-4 sticky top-0">
       <div className="flex items-center justify-between">
         <h1 className="text-white text-lg font-semibold">Stock Manager</h1>
         <button

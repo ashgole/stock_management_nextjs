@@ -51,3 +51,13 @@ export const updateProductQuantity = async (productId, newQuantity) => {
   }
   return await res.json();
 };
+
+export const deleteProduct = async (id) => {
+  const response = await fetch(`/api/product?id=${id}`, {
+    method: 'DELETE',
+  });
+  if (!response.ok) {
+    throw new Error('Failed to delete product');
+  }
+  return await response.json();
+};
