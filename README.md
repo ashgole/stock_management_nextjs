@@ -2,7 +2,7 @@
 <a href="https://ashabb.netlify.app/" target="_blank"> We offer freelance web development using MERN, NextJS and ThreeJS.</a>
 </h1>
 
-# ASHABB Stock Management App using NEXTjs
+# ASHABB Stock Management App using NextJS
 
 ### "Stock management app built with Next.js, TailwindCSS, and MongoDB, featuring product CRUD operations, real-time filtering with debouncing, server-side rendering (SSR), and responsive design. Deployed on Vercel for seamless performance."
 
