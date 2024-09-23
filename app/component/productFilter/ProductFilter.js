@@ -9,7 +9,6 @@ const ProductFilter = () => {
   const [selectedProducts, setSelectedProducts] = useState({});
   const [updatingProductId, setUpdatingProductId] = useState(null); // Track which product is being updated
   const [error, setError] = useState(null);
-
   // Debounced search for products
   const debouncedFetchProducts = useCallback(
     debounce(async (term) => {
@@ -35,13 +34,13 @@ const ProductFilter = () => {
 
   // Handle quantity increment
   const incrementQuantity = async (id, currentQuantity) => {
-    await updateQuantity(id, currentQuantity + 1);
+    await updateQuantity(id, parseInt(currentQuantity) + 1);
   };
 
   // Handle quantity decrement
   const decrementQuantity = async (id, currentQuantity) => {
     if (currentQuantity > 0) {
-      await updateQuantity(id, currentQuantity - 1);
+      await updateQuantity(id, parseInt(currentQuantity) - 1);
     }
   };
 
@@ -62,7 +61,7 @@ const ProductFilter = () => {
   };
 
   return (
-    <div className="w-full max-w-sm mx-auto">
+    <div className="w-full max-w-sm mx-auto mt-4">
       <input
         type="text"
         placeholder="Search product"
@@ -85,7 +84,7 @@ const ProductFilter = () => {
               <span>{product.name}</span>
               <div className="flex items-center">
                 <button
-                  className="px-2 py-1 text-sm bg-gray-200 rounded-md"
+                  className={`${updatingProductId === product._id ? 'bg-gray-400':'bg-blue-600'} text-white px-2 py-1 text-sm rounded-md`}
                   onClick={() => decrementQuantity(product._id, selectedProducts[product._id] || product.quantity)}
                   disabled={updatingProductId === product._id}
                 >
@@ -93,7 +92,7 @@ const ProductFilter = () => {
                 </button>
                 <span className="mx-2">{selectedProducts[product._id] || product.quantity}</span>
                 <button
-                  className="px-2 py-1 text-sm bg-gray-200 rounded-md"
+                  className={`${updatingProductId === product._id ? 'bg-gray-400':'bg-blue-600'} text-white px-2 py-1 text-sm rounded-md`}
                   onClick={() => incrementQuantity(product._id, selectedProducts[product._id] || product.quantity)}
                   disabled={updatingProductId === product._id}
                 >
