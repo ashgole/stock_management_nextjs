@@ -19,7 +19,10 @@ Github : <a href="https://github.com/ashgole/stock_management_nextjs" target="_b
 
 ## Screenshots
 
-![home page](https://github.com/ashgole/stock_management_nextjs/blob/main/screenshots/0.png)
+![page 0](https://github.com/ashgole/stock_management_nextjs/blob/main/screenshots/0.png)
+![page 1](https://github.com/ashgole/stock_management_nextjs/blob/main/screenshots/1.png)
+![page 2](https://github.com/ashgole/stock_management_nextjs/blob/main/screenshots/2.png)
+![page 3](https://github.com/ashgole/stock_management_nextjs/blob/main/screenshots/3.png)
 
 ## how to run
 

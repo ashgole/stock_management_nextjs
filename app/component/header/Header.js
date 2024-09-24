@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <header className="bg-blue-600 p-4 sticky top-0">
       <div className="flex items-center justify-between">
-        <h1 className="text-white text-lg font-semibold">Stock Manager</h1>
+        <Link href="/" className="text-white hover:text-gray-300">
+          <h1 className="text-white text-lg font-semibold">Stock Manager</h1>
+        </Link>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-white md:hidden focus:outline-none"
@@ -22,14 +24,16 @@ const Header = () => {
         <nav className="hidden md:flex space-x-4">
           <Link href="/" className="text-white hover:text-gray-300">Dashboard</Link>
           <Link href="/pages/inventory" className="text-white hover:text-gray-300">Inventory</Link>
-          <Link href="/" className="text-white hover:text-gray-300">Settings</Link>
+          <Link href="/pages/about" className="text-white hover:text-gray-300">About</Link>
+          <Link href="/pages/contactus" className="text-white hover:text-gray-300">Contact us</Link>
         </nav>
       </div>
       {isOpen && (
         <nav className="mt-4 space-y-2 md:hidden">
           <Link href="/" className="block text-white">Dashboard</Link>
           <Link href="/pages/inventory" className="block text-white">Inventory</Link>
-          <Link href="/" className="block text-white">Settings</Link>
+          <Link href="/pages/about" className="block text-white">About</Link>
+          <Link href="/pages/contactus" className="block text-white">Contact us</Link>
         </nav>
       )}
     </header>
