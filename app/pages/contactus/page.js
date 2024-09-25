@@ -6,7 +6,7 @@ const ContactUs = ({ onSubmit }) => {
 
     return (
         <div className="max-w-md mx-auto p-4 border rounded shadow">
-            <h2 className="text-xl font-bold mb-4">Contact Us</h2>
+            <h2 className="text-xl font-bold mb-4">Contact Us : This is Dummy page</h2>
             <form  >
                 <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700" htmlFor="name">
