@@ -1,11 +1,14 @@
-
 "use client";
 // components/Header.js
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation'; // Import usePathname
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // Get the current route
+
+  const isActive = (path) => pathname === path; // Helper function to check if the link is active
 
   return (
     <header className="bg-blue-600 p-4 sticky top-0">
@@ -22,18 +25,34 @@ const Header = () => {
           </svg>
         </button>
         <nav className="hidden md:flex space-x-4">
-          <Link href="/" className="text-white hover:text-gray-300">Dashboard</Link>
-          <Link href="/pages/inventory" className="text-white hover:text-gray-300">Inventory</Link>
-          <Link href="/pages/about" className="text-white hover:text-gray-300">About</Link>
-          <Link href="/pages/contactus" className="text-white hover:text-gray-300">Contact us</Link>
+          <Link href="/" className={`text-white hover:text-gray-300 ${isActive('/') ? 'font-bold' : ''}`}>
+            Dashboard
+          </Link>
+          <Link href="/pages/inventory" className={`text-white hover:text-gray-300 ${isActive('/pages/inventory') ? 'font-bold' : ''}`}>
+            Inventory
+          </Link>
+          <Link href="/pages/about" className={`text-white hover:text-gray-300 ${isActive('/pages/about') ? 'font-bold' : ''}`}>
+            About
+          </Link>
+          <Link href="/pages/contactus" className={`text-white hover:text-gray-300 ${isActive('/pages/contactus') ? 'font-bold' : ''}`}>
+            Contact us
+          </Link>
         </nav>
       </div>
       {isOpen && (
         <nav className="mt-4 space-y-2 md:hidden">
-          <Link href="/" className="block text-white">Dashboard</Link>
-          <Link href="/pages/inventory" className="block text-white">Inventory</Link>
-          <Link href="/pages/about" className="block text-white">About</Link>
-          <Link href="/pages/contactus" className="block text-white">Contact us</Link>
+          <Link href="/" className={`block text-white ${isActive('/') ? 'font-bold' : ''}`}>
+            Dashboard
+          </Link>
+          <Link href="/pages/inventory" className={`block text-white ${isActive('/pages/inventory') ? 'font-bold' : ''}`}>
+            Inventory
+          </Link>
+          <Link href="/pages/about" className={`block text-white ${isActive('/pages/about') ? 'font-bold' : ''}`}>
+            About
+          </Link>
+          <Link href="/pages/contactus" className={`block text-white ${isActive('/pages/contactus') ? 'font-bold' : ''}`}>
+            Contact us
+          </Link>
         </nav>
       )}
     </header>
